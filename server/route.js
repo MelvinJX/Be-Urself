@@ -2,9 +2,11 @@ const { Router } = require("express");
 const { Article } = require("./model")
 
 const route = Router();
+const path = require("path");
 
 route.get("/form", (request, response) => {
-    response.sendFile(__dirname + '../client/index.html');
+    const filePath = path.resolve(__dirname, '../client/index.html');
+    response.sendFile(filePath);
 });
 
 route.post("/formPost", (request, response) => {
@@ -13,6 +15,10 @@ route.post("/formPost", (request, response) => {
     const newArticle = new Article(body);
     newArticle.save();
     response.json(newArticle);
+});
+
+route.get("/formPost", (request, response) => {
+    response.json("Test");
 });
 
 module.exports = route;
