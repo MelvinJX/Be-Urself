@@ -1,0 +1,9 @@
+route.post("/upload", (request, response) => {
+
+    J'ai supprimé cette ligne car elle n'avait pas l'air de fonctionné.
+    if (!image) return response.sendStatus(400);
+
+    Celle là en revanche fonctionne parfaitement
+    if (!/^image/.test(image.mimetype)) return response.status(400).json({Message : "Veuillez choisir un fichier de type .jpeg, .png, .jpg."});
+
+});

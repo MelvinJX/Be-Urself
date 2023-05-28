@@ -2,3 +2,5 @@ server/node_modules
 server/package-lock.json
 server/package.json
 server/.env
+server/CodeSupprimer.txt
+server/upload

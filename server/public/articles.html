@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="js/articles.js"></script>
 </head>
 <body>
     <header>
@@ -21,14 +22,7 @@
     </header>
 
     <section>
-        <form action="/upload" method="POST" enctype="multipart/form-data">
-            <input type="text" name="title" placeholder="Titre" />
-            <textarea name="content" placeholder="Contenu"></textarea>
-            <input type="file" name="image" />
-            <button type="submit">Créer</button>
-        </form>
-        <!-- <img src="image.jpeg" alt=""> -->
-        <img src="C:\\Users\\Mjxbe\\OneDrive\\Bureau\\Be Urself\\server/upload/9551f7c5-bb3a-41dc-a781-f7fdd22072dcVent.png" alt="">
-    </section>    
+        <div class="allArticles"></div>
+    </section>
 </body>
 </html>
