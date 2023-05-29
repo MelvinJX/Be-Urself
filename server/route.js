@@ -1,5 +1,6 @@
 const { Router, response } = require("express");
 const { Article } = require("./model")
+const { isImageFile, isValidArticle } = require("./middleware");
 
 const route = Router();
 const path = require("path");
@@ -15,14 +16,9 @@ route.get("/all", async (request, response) => {
     response.json(allArticles);
 })
 
-route.post("/upload", (request, response) => {
+route.post("/upload", [isValidArticle, isImageFile], (request, response) => {
     const { body } = request;
     const { image } = request.files;
-
-    // Cette ligne devra passer dans le fichier verif.js, pas route.js.
-    // On l'utilisera en middleware
-    // Si l'image n'est pas de type image, alors renvoie une erreur
-    if (!/^image/.test(image.mimetype)) return response.status(400).json({Message : "Veuillez choisir un fichier de type .jpeg, .png, .jpg."}); 
 
     const fileName = uuidv4() + image.name; // On change le nom de l'image en un nom unique grâce au UUID
     const absoluteImagePath = __dirname + '/upload/' + fileName; // On récupère le chemin absolue de l'image
