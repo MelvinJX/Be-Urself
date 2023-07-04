@@ -1,18 +1,3 @@
--------------------------------------------------
-Fichier middleware.js
-
-route.post("/upload", (request, response) => {
-
-    J'ai supprimé cette ligne car elle n'avait pas l'air de fonctionné.
-    if (!image) return response.sendStatus(400);
-
-    Celle là en revanche fonctionne parfaitement
-    if (!/^image/.test(image.mimetype)) return response.status(400).json({Message : "Veuillez choisir un fichier de type .jpeg, .png, .jpg."});
-
-});
--------------------------------------------------
-Fichier errorMsg.js
-
 // const title = document.querySelector("#title");
 // const content = document.querySelector("#content");
 // const image = document.querySelector("#image");
@@ -37,4 +22,3 @@ Fichier errorMsg.js
 // title.addEventListener("click", () => {
 //     alert("Erreur form");
 // })
--------------------------------------------------

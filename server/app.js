@@ -25,6 +25,6 @@ app.use(express.urlencoded());
 app.use(express.static(__dirname + "/upload"));
 app.use(express.static(__dirname + '/public'));
 
-app.use(route);
+app.use("/article", route);
 
 app.listen(PORT, () => console.log(`Express démarre sur le PORT : ${PORT} \n http://localhost:${PORT}`));
